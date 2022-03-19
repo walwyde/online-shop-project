@@ -1,0 +1,15 @@
+extends layouts/mainLayout.pug 
+
+block contents 
+  main 
+      form.product-form(action="/" method="POST") 
+        .form-control 
+          label(for="title") Title 
+          input(type="text" name="title" id="title" required)
+        button(type="submit") Add Product
+
+  
+  
+  
+  
+  include footer.pug
