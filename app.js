@@ -7,14 +7,21 @@ const { engine } = require('express-handlebars')
 
 const app = express();
 
+// registering habdlebars as view engine...
 app.engine('hbs', engine({
   extname: 'hbs',
-  defaultLayout: "",
-  layoutsDir: ""
-}))
-// app.set("view engine", "ejs");
-// app.set('view engine', 'pug')
+  defaultLayout: "mainLayout.hbs",
+  layoutsDir: "views/layouts/"
+})) 
+// setting handlebars as view engine...
 app.set('view engine', 'hbs')
+
+// setting ejs as view engine...
+// app.set("view engine", "ejs");
+
+// setting pug as view engine...
+// app.set('view engine', 'pug')
+
 app.set('views', 'views')
 
 const admin_Data = require("./routes/admin_Routes");
@@ -30,7 +37,7 @@ app.use(admin_Data.routes);
 app.use(shop_Route);
 
 app.use((req, res) => {
-  res.status(404).render("404");
+  res.status(404).render("404", {errorCss: true});
 });
 
 app.listen(port, () => {

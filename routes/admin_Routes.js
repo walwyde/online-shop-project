@@ -2,7 +2,11 @@ const express = require('express')
 const router = express.Router()
 const products = []
 router.get('/add-product', (req, res) => {
-  res.render('add-product', {docTitle: 'Add Product', path: '/add-product'})
+  res.render('add-product', {docTitle: 'Add Product',
+   path: '/add-product',
+  formsCss: true,
+  activeAddProduct: true
+  })
 })
 router.post('/', (req, res) => {
   const obj = JSON.parse(JSON.stringify(req.body))

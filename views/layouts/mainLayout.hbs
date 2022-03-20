@@ -4,21 +4,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
   <title>{{ docTitle }}</title>
-  {{#if formsCss}} <link rel="stylesheet" href="main.css">
+  {{#if bodyCss}} <link rel="stylesheet" href="body.css"> {{/if}}
+  {{#if formsCss}} <link rel="stylesheet" href="form.css"> {{/if}}
+  {{#if productCss}} <link rel="stylesheet" href="product.css"> {{/if}}
+  {{#if errorCss}} <link rel="stylesheet" href="404_Body.css"> {{/if}}
 </head>
 <body>
   <header class="main_header">
   <nav class="main_header_nav">
     <ul class="main_header_item_list">
-      <li class="main_header_item"><a{{#if activeShop }}active {{/if}} href="/">Shop</a></li>
+      <li class="main_header_item"><a class="{{#if activeShop }}active{{/if}}" href="/">Shop</a></li>
       <li class="main_header_item">
-        <a href="/add-product">add-product</a>
+        <a class="{{#if activeAddProduct }}active{{/if}}" href="/add-product">add-product</a>
       </li>
       <li class="main_header_item"><a href="/about">About</a></li>
     </ul>
   </nav>
 </header>
+
+
+  {{{ body }}}  
+
 </body>
-{{{ body }}}
+
+
 </html>
