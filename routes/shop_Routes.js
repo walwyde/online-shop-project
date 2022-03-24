@@ -4,13 +4,14 @@ const admin_Data = require("./admin_Routes");
 
 router.get("/", (req, res) => {
   const products = admin_Data.products;
-  res.render("index", { prods: products,
-     docTitle: "Shop",
-      path: "/",
+  res.render("index", {
+    prods: products,
+    docTitle: "Shop",
+    path: "/",
     hasProducts: products.length > 0,
     activeShop: true,
-    productCss: true
-    });
+    productCss: true,
+  });
 });
 
 module.exports = router;
