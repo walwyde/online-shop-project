@@ -22,8 +22,9 @@ app.set("view engine", "ejs");
 
 // app.set("views", "views");
 
-const admin_Data = require("./routes/admin_Routes");
-const shop_Route = require("./routes/shop_Routes");
+const adminRoutes = require("./routes/adminRoutes");
+const shopRoutes = require("./routes/shopRoutes");
+const errController = require('./controllers/errorController')
 
 const port = process.env.PORT || 3002;
 
@@ -31,12 +32,10 @@ app.use(bp.urlencoded({ extended: false }));
 app.use(bp.json());
 
 app.use(express.static("./public"));
-app.use(admin_Data.routes);
-app.use(shop_Route);
+app.use(adminRoutes);
+app.use(shopRoutes);
 
-app.use((req, res) => {
-  res.status(404).render("404", { errorCss: true, docTitle: 'error' });
-});
+app.use(errController.getErrorPage)
 
 app.listen(port, () => {
   console.log(`connected on ${port}`);
