@@ -1,0 +1,36 @@
+<%- include('../includes/header') %>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="card.css">
+  </head>
+  <body>
+<%- include('../includes/navigation') %>
+<main>
+
+<% if (hasProducts) { %> 
+                  <h1>Content in Stock.</h1> 
+  <div class="card-list">
+    <div class="card-items">
+      
+      <% prods.forEach( product => { %>
+                <div class="card">
+                  <h2 class="item-title"><%= product.title %></h2>
+                  <img src="<%= product.imageUrl %>" width="150px" />
+                  <h2 class="item-price">$ <%= product.price %></h2>
+                  <p class="card-text"><%= product.description %></p>
+                  <form action="/edit-product">
+                    <a href="/edit-product">Edit</a>
+                    <button type="submit">Delete</button>
+                  </form>
+                </div>
+                <% }) %>
+              </div>
+        </div>
+
+    <% } else { %>
+      <h1>There Are No Products Yet</h1>
+    <% } %>
+</main>
+
+
+    
+<%- include('../includes/footer') %>

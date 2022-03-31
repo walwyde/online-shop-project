@@ -4,15 +4,22 @@
   margin: auto;
 }
 .form-control label,
-.form-control input {
+.form-control input,
+.form-control textarea {
   display: block;
   width: 100%;
+  resize: none;
 }
-.form-control input {
+.form-control input,
+.form-control textarea {
   border: 1px solid #0000ff;
   font: inherit;
   border-radius: 2px;
   text-align: center;
+}
+.form-control input:focus,
+.form-control textarea:focus {
+  outline-color: #b2b3b5;
 }
 button {
   font: inherit;

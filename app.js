@@ -20,7 +20,7 @@ app.set("view engine", "ejs");
 // setting pug as view engine...
 // app.set('view engine', 'pug')
 
-// app.set("views", "views");
+app.set("views", "views");
 
 const adminRoutes = require("./routes/adminRoutes");
 const shopRoutes = require("./routes/shopRoutes");

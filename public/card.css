@@ -4,18 +4,19 @@
   /* width:fit-content; */
   justify-content: center;
   padding: 30px;
-  border: 1px solid #000;
-  background-color: cornflowerblue;
+  /* border: 1px solid #000; */
+  /* background-color: #0000ff; */
 }
 .card {
-  border: 2px solid #0000ff;
+  /* border: 2px solid #0000ff; */
   border-radius: 10px;
-  padding: 10px;
-  width: 30%;
+  padding: 2px;
+  width: 80%;
   margin: auto;
   margin-bottom: 70px;
-  background-color: #ccc;
+  /* background-color: #b2beb5; */
+  color: #cfc;
 }
-.card-list {
+/* .card-list {
   background-color: burlywood;
-}
+} */
