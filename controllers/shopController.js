@@ -10,6 +10,14 @@ exports.getShopProducts = (req, res) => {
     });
   });
 };
+exports.getProduct = (req, res) => {
+  const prodId = req.params.productId
+  Product.findById(prodId, product => {
+    console.log(product)
+  })
+  res.redirect('/products')
+  }
+
 exports.getCart = (req, res) => {
   res.render("shop/cart", { path: "/cart", docTitle: "cart" });
 };

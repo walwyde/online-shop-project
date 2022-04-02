@@ -7,17 +7,25 @@
 <main>
 
 <% if (hasProducts) { %> 
-                  <h1>Displaying content in Stock . . . ..</h1> 
+                  <h1>Displaying content in Stock </h1> 
+                  <hr>
   <div class="card-list">
     <div class="card-items">
       
       <% prods.forEach( product => { %>
                 <div class="card">
                   <h2 class="item-title"><%= product.title %></h2>
-                  <img src="<%= product.imageUrl %>" width="150px" />
+                  <img src="<%= product.imageUrl %>" width="300px" />
                   <h2 class="item-price">$ <%= product.price %></h2>
                   <p class="card-text"><%= product.description%></p>
-                  <button type="submit">Add to Cart</button>
+                  
+                  <div class="card-action">
+                    <a class="btn" href="/products/<%= product.Id %>">Detail</a>
+                  <form action="/cart">
+                      <button class="btn" type="submit">Add to Cart</button>
+                    </form>
+                 
+                  </div>
                 </div>
                 <% }) %>
               </div>

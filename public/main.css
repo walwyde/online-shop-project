@@ -62,3 +62,27 @@ footer {
   position: relative;
   bottom: 0;
 }
+.btn {
+  font: inherit;
+  border-radius: 5px;
+  border: 1px solid #cdc;
+  color: #0000ff;
+  background: wheat;
+  cursor: copy;
+  margin: 5px;
+  padding: 0.5rem;
+  width: 10rem;
+}
+.btn:hover,
+.btn:active {
+  background-color: #0000ff;
+  color: #fff;
+}
+.card-action {
+  display: flex;
+  justify-content: center;
+}
+hr {
+  width: 50%;
+  color: #cfc;
+}

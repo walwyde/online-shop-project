@@ -6,7 +6,7 @@ const p = path.join(
   "data",
   "products.json"
 );
-const getProductFromFile = (cb) => {
+const getProductsFromFile = (cb) => {
   fs.readFile(p, (err, fileContent) => {
     if (err) {
       cb([]);
@@ -24,7 +24,8 @@ module.exports = class product {
     this.description = description;
   }
   save() {
-    getProductFromFile((products) => {
+    this.Id = Math.random().toString()
+    getProductsFromFile((products) => {
       products.push(this);
 
       fs.writeFile(p, JSON.stringify(products), (err) => {
@@ -34,6 +35,13 @@ module.exports = class product {
   }
 
   static fetchAll(cb) {
-    getProductFromFile(cb);
+    getProductsFromFile(cb);
+  }
+  static findById(id, cb) {
+    getProductsFromFile(products => {
+      const product = products.find(theprod => theprod.Id ===id)
+      
+      cb(product)
+    })
   }
 };
