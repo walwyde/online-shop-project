@@ -22,9 +22,9 @@ app.set("view engine", "ejs");
 
 app.set("views", "views");
 
-const adminRoutes = require("./routes/adminRoutes");
-const shopRoutes = require("./routes/shopRoutes");
 const errController = require('./controllers/errorController')
+const shopRoutes = require("./routes/shopRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 const port = process.env.PORT || 3002;
 
@@ -32,8 +32,8 @@ app.use(bp.urlencoded({ extended: false }));
 app.use(bp.json());
 
 app.use(express.static("./public"));
-app.use(adminRoutes);
 app.use(shopRoutes);
+app.use(adminRoutes);
 
 app.use(errController.getErrorPage)
 

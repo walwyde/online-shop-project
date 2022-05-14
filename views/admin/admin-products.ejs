@@ -1,6 +1,6 @@
 <%- include('../includes/header') %>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/card.css">
   </head>
   <body>
 <%- include('../includes/navigation') %>
@@ -17,10 +17,13 @@
                   <img src="<%= product.imageUrl %>" width="150px" />
                   <h2 class="item-price">$ <%= product.price %></h2>
                   <p class="card-text"><%= product.description %></p>
-                  <form action="/edit-product">
-                    <a href="/edit-product">Edit</a>
-                    <button type="submit">Delete</button>
-                  </form>
+
+                  <div class="card-action">
+                    <a class="btn" href="/edit-product">Edit</a>
+                    <form action="/edit-product">
+                      <button class="btn" type="submit">Delete</button>
+                    </form>
+                  </div>
                 </div>
                 <% }) %>
               </div>
